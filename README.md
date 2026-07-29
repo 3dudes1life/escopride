@@ -23,3 +23,10 @@ This version includes:
 ## Ownership
 
 Esco Pride is a community platform developed and operated by OutAt Inc., a California C corporation.
+
+
+## Current launch framing
+
+The landing page is now centered on Pride Month 2027. The community-first message is explained below the hero rather than used as an oversized headline.
+
+Official Avi rules include attached arms/hands, the black ESCO Progress Pride hat, blush cheeks, no cape, and a hand-heart pose for the final mascot art.
