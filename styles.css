@@ -449,3 +449,25 @@ footer p { margin:10px 0; }
   .business-callout { width:min(100% - 28px,1180px);margin:70px auto;padding:31px 24px; }
   .closing { width:min(100% - 28px,960px);padding-bottom:80px; }
 }
+
+
+.project-credit {
+  margin-top: 10px;
+  color: #b7afca;
+  font-size: .84rem;
+  font-weight: 600;
+}
+
+.ownership-note {
+  margin-top: 18px;
+  color: #d8d1e5 !important;
+  font-size: .88rem;
+  font-weight: 700;
+}
+
+.footer-credit {
+  margin-top: 14px;
+  color: #c8c1d8;
+  font-size: .88rem;
+  font-weight: 600;
+}

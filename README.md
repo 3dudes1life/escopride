@@ -18,3 +18,8 @@ This version includes:
 - Monthly randomized business meetups
 - All-ages meetup planning
 - Responsive Apple-inspired mobile UX
+
+
+## Ownership
+
+Esco Pride is a community platform developed and operated by OutAt Inc., a California C corporation.
