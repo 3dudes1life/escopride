@@ -1,0 +1,323 @@
+:root {
+  --ink: #f8f7ff;
+  --muted: #c9c4dc;
+  --bg: #100d20;
+  --panel: #1a1530;
+  --panel-2: #211a3b;
+  --purple: #8e59ff;
+  --pink: #e64d9b;
+  --orange: #ff7b35;
+  --yellow: #ffd047;
+  --green: #55b84d;
+  --blue: #36a7ce;
+  --radius: 28px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 72% 18%, rgba(142, 89, 255, .18), transparent 30rem),
+    radial-gradient(circle at 10% 60%, rgba(55, 165, 201, .10), transparent 26rem),
+    var(--bg);
+  font-family: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+a { color: inherit; }
+.rainbow-line {
+  height: 7px;
+  background: linear-gradient(90deg, #e73546, #ff7b35, #ffd047, #55b84d, #36a7ce, #6850b9, #e64d9b);
+}
+
+.site-header {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 28px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  text-decoration: none;
+  font: 900 1rem/1 "Montserrat", sans-serif;
+  letter-spacing: .08em;
+}
+.brand-mark { font-size: 1.45rem; }
+
+.status-pill {
+  padding: 9px 13px;
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 999px;
+  color: #ebe8f8;
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .11em;
+  background: rgba(255,255,255,.05);
+}
+
+main { overflow: hidden; }
+
+.hero {
+  width: min(1180px, calc(100% - 40px));
+  min-height: 680px;
+  margin: 0 auto;
+  padding: 55px 0 90px;
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 45px;
+  align-items: center;
+}
+
+.eyebrow, .section-label {
+  color: #bfa7ff;
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+}
+
+h1, h2, h3 { margin-top: 0; }
+h1 {
+  margin-bottom: 25px;
+  max-width: 780px;
+  font: 900 clamp(3.2rem, 7vw, 6.25rem)/.94 "Montserrat", sans-serif;
+  letter-spacing: -.06em;
+}
+h1 span {
+  color: transparent;
+  background: linear-gradient(90deg, #ff7b35, #ffd047, #55b84d, #36a7ce, #b16cff);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.lead {
+  max-width: 660px;
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  line-height: 1.7;
+}
+
+.actions {
+  margin-top: 34px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.primary-button {
+  display: inline-flex;
+  min-height: 54px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 23px;
+  border-radius: 999px;
+  color: #171021;
+  background: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  box-shadow: 0 12px 40px rgba(255,255,255,.12);
+}
+
+.text-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+}
+.text-link span { color: #bfa7ff; }
+
+.microcopy {
+  margin-top: 22px;
+  color: #918aa9;
+  font-size: .9rem;
+}
+
+.hero-art {
+  position: relative;
+  min-height: 570px;
+  display: grid;
+  place-items: center;
+}
+
+.avi-card {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 490px);
+  aspect-ratio: .88;
+  display: grid;
+  place-items: end center;
+  border-radius: 42px;
+  overflow: hidden;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.10), rgba(255,255,255,.025)),
+    var(--panel);
+  border: 1px solid rgba(255,255,255,.11);
+  box-shadow: 0 28px 80px rgba(0,0,0,.36);
+}
+
+.avi-card::after {
+  content: "";
+  position: absolute;
+  inset: auto 7% 4% 7%;
+  height: 17%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(0,0,0,.42), transparent 68%);
+  filter: blur(10px);
+}
+
+.avi-card img {
+  position: relative;
+  z-index: 1;
+  width: 106%;
+  max-height: 96%;
+  object-fit: contain;
+  object-position: center bottom;
+  filter: drop-shadow(0 22px 25px rgba(0,0,0,.28));
+}
+
+.glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(55px);
+  opacity: .42;
+}
+.glow-one { width: 280px; height: 280px; background: #7a48f1; top: 10px; right: 0; }
+.glow-two { width: 220px; height: 220px; background: #df4a9b; bottom: 30px; left: 10px; }
+
+.float-card {
+  position: absolute;
+  z-index: 3;
+  width: 190px;
+  padding: 15px 17px;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 17px;
+  background: rgba(23,18,42,.82);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 16px 38px rgba(0,0,0,.28);
+}
+.float-card strong, .float-card span { display: block; }
+.float-card strong { font-size: .92rem; }
+.float-card span { margin-top: 4px; color: #aca5c4; font-size: .78rem; }
+.float-one { top: 80px; left: -24px; }
+.float-two { right: -25px; bottom: 88px; }
+
+.mission-section {
+  padding: 105px max(20px, calc((100% - 1180px)/2));
+  background: #f4f0e8;
+  color: #151225;
+}
+
+.mission-grid {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: 1fr .75fr;
+  gap: 70px;
+  align-items: start;
+}
+.mission-grid h2 {
+  margin-bottom: 0;
+  max-width: 720px;
+  font: 800 clamp(2.3rem, 5vw, 4.4rem)/1.02 "Montserrat", sans-serif;
+  letter-spacing: -.055em;
+}
+.mission-copy { color: #4e4960; font-size: 1.08rem; line-height: 1.75; }
+.mission-copy p:first-child { margin-top: 0; }
+
+.features {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 95px 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.features article {
+  min-height: 270px;
+  padding: 32px;
+  border: 1px solid rgba(255,255,255,.09);
+  border-radius: var(--radius);
+  background: linear-gradient(145deg, rgba(255,255,255,.065), rgba(255,255,255,.02));
+}
+.icon { font-size: 2.2rem; }
+.features h3 { margin: 45px 0 13px; font: 800 1.35rem/1.2 "Montserrat", sans-serif; }
+.features p { margin: 0; color: var(--muted); line-height: 1.65; }
+
+.business-callout {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto 100px;
+  padding: 50px;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 60px;
+  align-items: center;
+  border-radius: 34px;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(230,77,155,.22), transparent 24rem),
+    linear-gradient(135deg, #2b1b49, #17142c);
+  border: 1px solid rgba(255,255,255,.11);
+}
+.business-callout h2 {
+  margin: 12px 0 18px;
+  max-width: 650px;
+  font: 800 clamp(2rem, 4vw, 3.45rem)/1.05 "Montserrat", sans-serif;
+  letter-spacing: -.045em;
+}
+.business-callout > div > p:last-child { color: var(--muted); line-height: 1.7; }
+
+.coming-box {
+  padding: 28px;
+  border-radius: 22px;
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.13);
+}
+.coming-box span, .coming-box strong { display: block; }
+.coming-box span { color: #c8b8f3; font-size: .72rem; font-weight: 800; letter-spacing: .12em; }
+.coming-box strong { margin: 10px 0; font: 900 1.75rem/1 "Montserrat", sans-serif; }
+.coming-box p { margin: 0; color: #bcb5d0; font-size: .92rem; line-height: 1.5; }
+
+footer {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 0 0 42px;
+  text-align: center;
+  color: #918aa9;
+}
+.footer-brand { color: #fff; font: 900 1rem/1 "Montserrat", sans-serif; letter-spacing: .08em; }
+footer p { margin: 10px 0; }
+.copyright { font-size: .82rem; }
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; padding-top: 35px; }
+  .hero-copy { text-align: center; }
+  .lead { margin-inline: auto; }
+  .actions { justify-content: center; }
+  .hero-art { min-height: 530px; }
+  .mission-grid, .business-callout { grid-template-columns: 1fr; gap: 36px; }
+  .features { grid-template-columns: 1fr; }
+  .features article { min-height: auto; }
+  .features h3 { margin-top: 24px; }
+}
+
+@media (max-width: 600px) {
+  .site-header { width: min(100% - 28px, 1180px); padding: 21px 0; }
+  .status-pill { font-size: .62rem; }
+  .hero { width: min(100% - 28px, 1180px); min-height: auto; padding-bottom: 70px; }
+  h1 { font-size: clamp(2.85rem, 15vw, 4.4rem); }
+  .hero-art { min-height: 445px; }
+  .avi-card { border-radius: 30px; }
+  .float-card { width: 164px; padding: 12px 14px; }
+  .float-one { top: 35px; left: -7px; }
+  .float-two { right: -7px; bottom: 42px; }
+  .mission-section { padding-block: 72px; }
+  .mission-grid { gap: 28px; }
+  .features { width: min(100% - 28px, 1180px); padding-block: 70px; }
+  .business-callout { width: min(100% - 28px, 1180px); margin-bottom: 70px; padding: 31px 24px; }
+}
