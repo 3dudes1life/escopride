@@ -48,7 +48,7 @@ a { color: inherit; }
   gap: 11px;
   text-decoration: none;
   font: 900 1rem/1 "Montserrat", sans-serif;
-  letter-spacing: .08em;
+  letter-spacing: .20em;
 }
 .brand-mark { font-size: 1.45rem; }
 
@@ -59,7 +59,7 @@ a { color: inherit; }
   color: #ebe8f8;
   font-size: .72rem;
   font-weight: 800;
-  letter-spacing: .11em;
+  letter-spacing: .17em;
   background: rgba(255,255,255,.05);
 }
 
@@ -80,7 +80,8 @@ main { overflow: hidden; }
   color: #bfa7ff;
   font-size: .78rem;
   font-weight: 800;
-  letter-spacing: .14em;
+  line-height: 1.55;
+  letter-spacing: .20em;
 }
 
 h1, h2, h3 { margin-top: 0; }
@@ -279,7 +280,7 @@ h1 span {
   border: 1px solid rgba(255,255,255,.13);
 }
 .coming-box span, .coming-box strong { display: block; }
-.coming-box span { color: #c8b8f3; font-size: .72rem; font-weight: 800; letter-spacing: .12em; }
+.coming-box span { color: #c8b8f3; font-size: .72rem; font-weight: 800; letter-spacing: .18em; }
 .coming-box strong { margin: 10px 0; font: 900 1.75rem/1 "Montserrat", sans-serif; }
 .coming-box p { margin: 0; color: #bcb5d0; font-size: .92rem; line-height: 1.5; }
 
@@ -290,7 +291,7 @@ footer {
   text-align: center;
   color: #918aa9;
 }
-.footer-brand { color: #fff; font: 900 1rem/1 "Montserrat", sans-serif; letter-spacing: .08em; }
+.footer-brand { color: #fff; font: 900 1rem/1 "Montserrat", sans-serif; letter-spacing: .20em; }
 footer p { margin: 10px 0; }
 .copyright { font-size: .82rem; }
 
