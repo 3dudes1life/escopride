@@ -17,3 +17,8 @@ A simple static landing page prepared for GitHub Pages.
 - `styles.css` — responsive styling
 - `assets/avi.png` — mascot image
 - `.nojekyll` — tells GitHub Pages to serve the files directly
+
+
+## V4 update
+
+Adds the community-first story, mobile app coming-soon section, and Apple-inspired responsive UX.
