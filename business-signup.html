@@ -7,10 +7,18 @@
   <meta name="description" content="Apply to become an Esco Pride Partner, Welcoming Place, or Online Partner for Pride Month 2027.">
   <meta property="og:title" content="Become an Esco Pride Partner">
   <meta property="og:description" content="Show LGBTQ+ Escondido that your business is ready to welcome and support our community.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://escopride.com/business-signup.html">
+  <meta property="og:image" content="https://escopride.com/assets/og-esco-pride.jpg">
+  <link rel="canonical" href="https://escopride.com/business-signup.html">
   <title>Business Partner Portal — Esco Pride</title>
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+  <script>document.documentElement.classList.add('js');</script>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="business-signup.css">
 </head>
@@ -43,6 +51,7 @@
           <a class="primary-button" href="#application">Start your application</a>
           <a class="secondary-button" href="#partner-types">Compare partner types</a>
         </div>
+        <div class="portal-status"><span class="pulse" aria-hidden="true"></span><strong>Applications for Pride Month 2027 are open</strong><span>No fee to apply</span></div>
         <p class="project-credit">Esco Pride is developed and operated by OutAt Inc., a California C corporation.</p>
       </div>
 
@@ -59,6 +68,7 @@
     </section>
 
     <section class="portal-proof reveal">
+      <div><strong>No fee to apply</strong><span>Early partner applications are free and reviewed individually.</span></div>
       <div><strong>Verified app profile</strong><span>Be discoverable where the community is looking.</span></div>
       <div><strong>Official partner badge</strong><span>Make your support visible in-person or online.</span></div>
       <div><strong>Local participation</strong><span>Offers, passport check-ins, meetups, and more.</span></div>
@@ -201,6 +211,8 @@
             <label>Email address<input type="email" name="email" autocomplete="email" maxlength="160" required></label>
             <label>Phone number<input type="tel" name="phone" autocomplete="tel" maxlength="40"></label>
             <label class="full">Website, shop, or booking page<input type="url" name="website" placeholder="https://" maxlength="250"></label>
+            <label>Instagram or primary social profile<input type="text" name="socialProfile" placeholder="@handle or full link" maxlength="160"></label>
+            <label>Number of locations<input type="number" name="locationCount" min="1" max="100" inputmode="numeric" placeholder="1"></label>
             <label class="full">Physical address, if applicable<input type="text" name="address" autocomplete="street-address" maxlength="250"></label>
             <label>Business category<input type="text" name="businessCategory" placeholder="Restaurant, retailer, salon, creator…" maxlength="100" required></label>
             <label>Age restrictions<select name="ageRestriction"><option value="">Select one</option><option>All ages</option><option>18+</option><option>21+</option><option>Varies by event or time</option><option>Online only</option></select></label>
@@ -225,6 +237,7 @@
             <label>Interested in Pride Passport check-ins?<select name="passportInterest" required><option value="">Select one</option><option>Yes</option><option>No</option><option>Not sure yet</option></select></label>
             <label>Interested in hosting a meetup?<select name="meetupInterest" required><option value="">Select one</option><option>Yes, all ages</option><option>Yes, adults only</option><option>Yes, either format</option><option>No</option><option>Not sure yet</option></select></label>
             <label class="full">Accessibility information, age restrictions, languages, or other helpful details<textarea name="accessibility" rows="4" maxlength="650"></textarea><small class="field-counter" data-counter-for="accessibility">0 / 650</small></label>
+            <label class="full">Anything else we should know?<textarea name="additionalNotes" rows="3" maxlength="500"></textarea><small class="field-counter" data-counter-for="additionalNotes">0 / 500</small></label>
           </div>
         </fieldset>
 
@@ -240,10 +253,12 @@
 
         <div class="form-actions">
           <button type="button" class="form-secondary" id="saveDraft">Save draft</button>
+          <button type="button" class="form-secondary" id="copyApplication">Copy application</button>
           <button type="button" class="form-secondary" id="downloadApplication">Download a copy</button>
+          <button type="button" class="form-link-button" id="clearDraft">Clear draft</button>
           <button type="submit" class="form-primary">Prepare application email</button>
         </div>
-        <p class="privacy-note">Your draft stays in this browser until you choose to prepare the email. No information is silently submitted.</p>
+        <p class="privacy-note">Your draft stays in this browser until you choose to prepare the email. No information is silently submitted. Review the <a href="privacy.html">privacy notice</a>.</p>
         <p id="formStatus" class="form-status" aria-live="polite"></p>
       </form>
     </section>
@@ -259,6 +274,8 @@
         <a href="index.html">Main site</a>
         <a href="#partner-types">Partner types</a>
         <a href="#standards">Standards</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
         <a href="mailto:will@outatinc.com">Contact</a>
       </div>
     </div>

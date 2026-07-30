@@ -1,10 +1,13 @@
 const form = document.getElementById('partnerApplication');
 const saveButton = document.getElementById('saveDraft');
+const copyButton = document.getElementById('copyApplication');
 const downloadButton = document.getElementById('downloadApplication');
+const clearButton = document.getElementById('clearDraft');
 const status = document.getElementById('formStatus');
 const progress = document.querySelector('.form-progress span');
-const storageKey = 'escoPridePartnerDraftV2';
+const storageKey = 'escoPridePartnerDraftV3';
 const applicationEmail = 'will@outatinc.com';
+let saveTimer;
 
 const formDataObject = () => {
   const output = {};
@@ -20,8 +23,21 @@ const setStatus = (message, type = '') => {
 };
 
 const saveDraft = (showMessage = false) => {
-  localStorage.setItem(storageKey, JSON.stringify(formDataObject()));
-  if (showMessage) setStatus('Draft saved on this device.', 'success');
+  try {
+    localStorage.setItem(storageKey, JSON.stringify(formDataObject()));
+    if (showMessage) setStatus('Draft saved on this device.', 'success');
+  } catch {
+    setStatus('This browser could not save the draft locally.', 'error');
+  }
+};
+
+const scheduleSave = () => {
+  clearTimeout(saveTimer);
+  setStatus('Saving draft on this device…', 'saving');
+  saveTimer = setTimeout(() => {
+    saveDraft(false);
+    setStatus('Draft saved locally. Nothing has been submitted.', 'success');
+  }, 450);
 };
 
 const restoreDraft = () => {
@@ -35,7 +51,7 @@ const restoreDraft = () => {
         else field.value = value;
       });
     });
-    setStatus('Your saved draft has been restored.', 'success');
+    setStatus('Your saved draft has been restored. Nothing has been submitted.', 'success');
   } catch {
     setStatus('The saved draft could not be restored.', 'error');
   }
@@ -69,15 +85,11 @@ const updateProgress = () => {
 
 const validateForm = () => {
   form.querySelectorAll('.invalid').forEach(field => field.classList.remove('invalid'));
-  const invalidFields = [...form.querySelectorAll('[required]')].filter(field => !field.checkValidity());
+  form.querySelectorAll('.invalid-choice').forEach(choice => choice.classList.remove('invalid-choice'));
+  const invalidFields = [...form.querySelectorAll('input, select, textarea')].filter(field => !field.checkValidity());
   const partnerTypes = form.querySelectorAll('[name="partnerType"]:checked');
-
   invalidFields.forEach(field => field.classList.add('invalid'));
-  if (!partnerTypes.length) {
-    form.querySelectorAll('[name="partnerType"]').forEach(field => field.closest('.choice')?.classList.add('invalid-choice'));
-  } else {
-    form.querySelectorAll('.invalid-choice').forEach(choice => choice.classList.remove('invalid-choice'));
-  }
+  if (!partnerTypes.length) form.querySelectorAll('[name="partnerType"]').forEach(field => field.closest('.choice')?.classList.add('invalid-choice'));
 
   if (invalidFields.length || !partnerTypes.length) {
     const first = invalidFields[0] || form.querySelector('[name="partnerType"]');
@@ -89,11 +101,19 @@ const validateForm = () => {
   return true;
 };
 
-const formatApplication = data => {
+const makeReference = () => {
+  const date = new Date();
+  const stamp = `${date.getFullYear()}${String(date.getMonth()+1).padStart(2,'0')}${String(date.getDate()).padStart(2,'0')}`;
+  const code = Math.random().toString(36).slice(2,6).toUpperCase();
+  return `EP-${stamp}-${code}`;
+};
+
+const formatApplication = (data, reference = makeReference()) => {
   const list = value => Array.isArray(value) ? value.join(', ') : (value || 'Not provided');
   return [
     'ESCO PRIDE PARTNER APPLICATION',
     '================================',
+    `Reference: ${reference}`,
     '',
     `Business/Organization: ${data.businessName || ''}`,
     `Business Category: ${data.businessCategory || ''}`,
@@ -101,7 +121,9 @@ const formatApplication = data => {
     `Email: ${data.email || ''}`,
     `Phone: ${data.phone || 'Not provided'}`,
     `Website: ${data.website || 'Not provided'}`,
-    `Address: ${data.address || 'Not provided'}`,
+    `Social Profile: ${data.socialProfile || 'Not provided'}`,
+    `Physical Address: ${data.address || 'Not provided'}`,
+    `Number of Locations: ${data.locationCount || 'Not provided'}`,
     `Age Restrictions: ${data.ageRestriction || 'Not provided'}`,
     '',
     `Partner Type(s): ${list(data.partnerType)}`,
@@ -115,13 +137,37 @@ const formatApplication = data => {
     `Pride Passport Interest: ${data.passportInterest || 'Not provided'}`,
     `Meetup Interest: ${data.meetupInterest || 'Not provided'}`,
     '',
-    'ACCESSIBILITY & OTHER DETAILS',
+    'ACCESSIBILITY & HELPFUL DETAILS',
     data.accessibility || 'Not provided',
+    '',
+    'ADDITIONAL NOTES',
+    data.additionalNotes || 'Not provided',
     '',
     `Agreements accepted: ${list(data.agreement)}`,
     '',
     `Prepared: ${new Date().toLocaleString()}`
   ].join('\n');
+};
+
+const copyText = async text => {
+  if (navigator.clipboard?.writeText) return navigator.clipboard.writeText(text);
+  const area = document.createElement('textarea');
+  area.value = text;
+  area.style.position = 'fixed';
+  area.style.opacity = '0';
+  document.body.appendChild(area);
+  area.select();
+  document.execCommand('copy');
+  area.remove();
+};
+
+const copyApplication = async () => {
+  try {
+    await copyText(formatApplication(formDataObject()));
+    setStatus('Application copied to your clipboard.', 'success');
+  } catch {
+    setStatus('The application could not be copied. Download a copy instead.', 'error');
+  }
 };
 
 const downloadApplication = () => {
@@ -133,38 +179,45 @@ const downloadApplication = () => {
   link.download = `esco-pride-application-${safeName || 'business'}.txt`;
   document.body.appendChild(link);
   link.click();
-  link.remove();
   URL.revokeObjectURL(link.href);
+  link.remove();
   setStatus('A copy of the application has been downloaded.', 'success');
 };
 
+const clearDraft = () => {
+  if (!window.confirm('Clear every field and remove the saved draft from this browser?')) return;
+  localStorage.removeItem(storageKey);
+  form.reset();
+  updateCounters();
+  updateProgress();
+  setStatus('Saved draft cleared from this device.', 'success');
+  form.elements.businessName.focus();
+};
+
 saveButton.addEventListener('click', () => saveDraft(true));
+copyButton.addEventListener('click', copyApplication);
 downloadButton.addEventListener('click', downloadApplication);
+clearButton.addEventListener('click', clearDraft);
 
 form.addEventListener('input', event => {
   event.target.classList.remove('invalid');
   event.target.closest('.choice')?.classList.remove('invalid-choice');
   updateCounters();
   updateProgress();
-  saveDraft(false);
+  scheduleSave();
 });
-
-form.addEventListener('change', () => {
-  updateProgress();
-  saveDraft(false);
-});
+form.addEventListener('change', () => { updateProgress(); scheduleSave(); });
 
 form.addEventListener('submit', event => {
   event.preventDefault();
   if (!validateForm()) return;
-
   const data = formDataObject();
-  const application = formatApplication(data);
-  const subject = `Esco Pride Partner Application — ${data.businessName}`;
+  const reference = makeReference();
+  const application = formatApplication(data, reference);
+  const subject = `Esco Pride Partner Application — ${data.businessName} — ${reference}`;
   const mailto = `mailto:${applicationEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(application)}`;
-
   saveDraft(false);
-  setStatus('Your email app should open with the completed application. Review it, then press Send.', 'success');
+  setStatus(`Application ${reference} is ready. Your email app should open; review the message, then press Send.`, 'success');
   window.location.href = mailto;
 });
 

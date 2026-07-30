@@ -4,15 +4,41 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#0b0914">
+  <meta name="color-scheme" content="dark light">
   <meta name="description" content="Esco Pride connects LGBTQ+ people and allies with welcoming Escondido businesses, meetups, Pride Passport experiences, and community—exclusively in the Esco Pride app.">
+  <link rel="canonical" href="https://escopride.com/">
   <meta property="og:title" content="Esco Pride — Pride Lives Here">
   <meta property="og:description" content="The website introduces the movement. The app connects the community.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://escopride.com/">
+  <meta property="og:image" content="https://escopride.com/assets/og-esco-pride.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Esco Pride — Pride Lives Here">
+  <meta name="twitter:description" content="A local LGBTQ+ community platform for Escondido, launching for Pride Month 2027.">
+  <meta name="twitter:image" content="https://escopride.com/assets/og-esco-pride.jpg">
   <title>Esco Pride — Pride Lives Here</title>
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+  <script>document.documentElement.classList.add('js');</script>
   <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Esco Pride",
+    "url": "https://escopride.com/",
+    "logo": "https://escopride.com/assets/icon-512.png",
+    "description": "A local LGBTQ+ community platform connecting Escondido residents, allies, welcoming businesses, and community meetups.",
+    "parentOrganization": {"@type":"Organization","name":"OutAt Inc."},
+    "areaServed": {"@type":"City","name":"Escondido","addressRegion":"CA","addressCountry":"US"}
+  }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -32,6 +58,7 @@
     <nav class="site-nav" id="site-nav" aria-label="Main navigation" data-nav>
       <a href="#app">The app</a>
       <a href="#why">Why Esco Pride</a>
+      <a href="#roadmap">Launch plan</a>
       <a href="#business">For businesses</a>
       <a href="#faq">FAQ</a>
       <a class="nav-cta" href="business-signup.html">Become a partner</a>
@@ -41,7 +68,7 @@
   <main id="main">
     <section class="hero" id="top">
       <div class="hero-copy reveal">
-        <p class="eyebrow">A NEW LGBTQ+ COMMUNITY PLATFORM FOR ESCONDIDO</p>
+        <p class="eyebrow">A local LGBTQ+ community platform for Escondido</p>
         <h1>Pride lives<br><span>right here.</span></h1>
         <p class="lead">
           Esco Pride is building a local network of welcoming businesses, real-life meetups,
@@ -49,23 +76,22 @@
         </p>
 
         <div class="actions">
-          <a class="primary-button" href="#app">Explore the app experience</a>
+          <a class="primary-button" href="#app">Preview the app</a>
           <a class="secondary-button" href="business-signup.html">Become a Pride Partner</a>
         </div>
 
-        <div class="launch-note">
-          <span class="pulse" aria-hidden="true"></span>
-          <strong>Launching for Pride Month 2027</strong>
-          <span>iPhone and Android</span>
+        <div class="launch-status" aria-label="Esco Pride launch status">
+          <div><span class="pulse" aria-hidden="true"></span><strong>Business applications are open</strong></div>
+          <div><span aria-hidden="true">📱</span><strong>App launches Pride Month 2027</strong></div>
         </div>
-        <p class="project-credit">An OutAt Inc. community platform.</p>
+        <p class="project-credit">An OutAt Inc. community platform for iPhone and Android.</p>
       </div>
 
       <div class="hero-visual reveal" aria-label="Preview of Avi and the future Esco Pride app">
         <div class="hero-orbit orbit-one" aria-hidden="true"></div>
         <div class="hero-orbit orbit-two" aria-hidden="true"></div>
         <div class="avi-wrap">
-          <img src="assets/avi.webp" alt="Avi, the Esco Pride avocado mascot, wearing a black ESCO hat in Progress Pride colors">
+          <img src="assets/avi.webp" fetchpriority="high" alt="Avi, the Esco Pride avocado mascot, wearing a black ESCO hat in Progress Pride colors">
         </div>
         <div class="floating-card card-app">
           <span class="card-kicker">APP EXCLUSIVE</span>
@@ -80,21 +106,29 @@
     </section>
 
     <section class="manifesto reveal" aria-label="Esco Pride philosophy">
-      <p class="eyebrow">COMMUNITY FIRST</p>
+      <p class="eyebrow">Community first</p>
       <h2>Before the parade. Before the festival. We build the places and connections that make Pride possible.</h2>
-      <p>
-        The website tells you what Esco Pride is. <strong>The app lets you be part of it.</strong>
-      </p>
+      <p>The website tells you what Esco Pride is. <strong>The app lets you be part of it.</strong></p>
     </section>
 
     <section class="app-section" id="app">
       <div class="app-intro reveal">
-        <p class="eyebrow">ONLY IN THE ESCO PRIDE APP</p>
+        <p class="eyebrow">Only in the Esco Pride app</p>
         <h2>Your LGBTQ+ Esco,<br>all in one place.</h2>
         <p>
           Discover who supports our community, find your next meetup, complete monthly Avi Trails,
           and turn everyday local choices into visible community impact.
         </p>
+
+        <div class="preview-tabs" role="tablist" aria-label="Preview app features">
+          <button class="preview-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="preview-home" data-preview-tab="home">Today</button>
+          <button class="preview-tab" type="button" role="tab" aria-selected="false" aria-controls="preview-explore" data-preview-tab="explore">Explore</button>
+          <button class="preview-tab" type="button" role="tab" aria-selected="false" aria-controls="preview-passport" data-preview-tab="passport">Passport</button>
+          <button class="preview-tab" type="button" role="tab" aria-selected="false" aria-controls="preview-meetups" data-preview-tab="meetups">Meetups</button>
+        </div>
+
+        <p class="preview-description" data-preview-description>See what is happening today, continue your current Avi Trail, and find the next reason to show up locally.</p>
+
         <div class="store-row" aria-label="App availability">
           <div class="store-badge" aria-disabled="true">
             <span class="store-icon"></span>
@@ -108,37 +142,78 @@
       </div>
 
       <div class="phone-stage reveal">
-        <div class="phone-shell" aria-label="Concept preview of the Esco Pride mobile app">
+        <div class="phone-shell" aria-label="Interactive concept preview of the Esco Pride mobile app">
           <div class="phone-topbar"><span>9:41</span><span class="dynamic-island"></span><span>● ◔</span></div>
           <div class="phone-screen">
-            <div class="phone-heading">
-              <div><span class="tiny-label">THURSDAY IN ESCO</span><h3>Hey, neighbor.</h3></div>
-              <span class="mini-avi" aria-hidden="true">🥑</span>
-            </div>
-            <div class="trail-card">
-              <span class="tiny-label light">JULY AVI TRAIL</span>
-              <h4>Support three local favorites.</h4>
-              <p>One more check-in unlocks your Summer in Esco badge.</p>
-              <div class="trail-progress"><span></span><span></span><span class="empty"></span></div>
-            </div>
-            <div class="phone-section-title"><strong>Explore nearby</strong><span>View map</span></div>
-            <div class="nearby-row">
-              <article><span>☕️</span><strong>Coffee & bites</strong><small>4 partners</small></article>
-              <article><span>🛍️</span><strong>Shop local</strong><small>6 partners</small></article>
-            </div>
-            <div class="meetup-card">
-              <div class="date-tile"><strong>18</strong><small>AUG</small></div>
-              <div><span class="tiny-label">NEXT MEETUP</span><strong>All-ages community social</strong><small>Location revealed in the app</small></div>
-            </div>
+            <section class="phone-panel is-active" id="preview-home" role="tabpanel" data-preview-panel="home">
+              <div class="phone-heading">
+                <div><span class="tiny-label">THURSDAY IN ESCO</span><h3>Hey, neighbor.</h3></div>
+                <span class="mini-avi" aria-hidden="true">🥑</span>
+              </div>
+              <div class="trail-card">
+                <span class="tiny-label light">JULY AVI TRAIL</span>
+                <h4>Support three local favorites.</h4>
+                <p>One more check-in unlocks your Summer in Esco badge.</p>
+                <div class="trail-progress"><span></span><span></span><span class="empty"></span></div>
+              </div>
+              <div class="phone-section-title"><strong>Explore nearby</strong><span>View map</span></div>
+              <div class="nearby-row">
+                <article><span>☕️</span><strong>Coffee & bites</strong><small>4 partners</small></article>
+                <article><span>🛍️</span><strong>Shop local</strong><small>6 partners</small></article>
+              </div>
+              <div class="meetup-card">
+                <div class="date-tile"><strong>18</strong><small>AUG</small></div>
+                <div><span class="tiny-label">NEXT MEETUP</span><strong>All-ages community social</strong><small>Location revealed in the app</small></div>
+              </div>
+            </section>
+
+            <section class="phone-panel" id="preview-explore" role="tabpanel" hidden data-preview-panel="explore">
+              <div class="phone-heading"><div><span class="tiny-label">VERIFIED PLACES</span><h3>Explore Esco.</h3></div><span class="mini-avi">📍</span></div>
+              <div class="mock-map" aria-hidden="true"><span class="map-pin pin-one">🥑</span><span class="map-pin pin-two">☕️</span><span class="map-pin pin-three">🌈</span><span class="map-road road-one"></span><span class="map-road road-two"></span></div>
+              <div class="filter-row"><span class="active">Open now</span><span>Offers</span><span>All ages</span></div>
+              <div class="place-card"><div class="place-icon">☕️</div><div><span class="tiny-label">PRIDE PARTNER</span><strong>Local coffee favorite</strong><small>Open until 6 PM · 0.4 mi</small></div><span>›</span></div>
+              <div class="place-card"><div class="place-icon">🛍️</div><div><span class="tiny-label">WELCOMING PLACE</span><strong>Downtown shop</strong><small>Community offer available</small></div><span>›</span></div>
+            </section>
+
+            <section class="phone-panel" id="preview-passport" role="tabpanel" hidden data-preview-panel="passport">
+              <div class="phone-heading"><div><span class="tiny-label">YOUR PRIDE PASSPORT</span><h3>Two stamps down.</h3></div><span class="mini-avi">🥑</span></div>
+              <div class="passport-card">
+                <span class="tiny-label light">SUMMER IN ESCO</span>
+                <div class="stamp-grid"><span class="stamped">☕️<small>Visited</small></span><span class="stamped">🛍️<small>Visited</small></span><span>＋<small>Next stop</small></span><span>🔒<small>Bonus</small></span></div>
+              </div>
+              <div class="scan-card"><span class="scan-icon">⌁</span><div><strong>Scan at a partner</strong><small>Use the business QR to collect your next Avi stamp.</small></div></div>
+              <div class="badge-preview"><span>🏅</span><div><span class="tiny-label">NEXT BADGE</span><strong>One check-in away</strong><small>Your badges stay in your collection.</small></div></div>
+            </section>
+
+            <section class="phone-panel" id="preview-meetups" role="tabpanel" hidden data-preview-panel="meetups">
+              <div class="phone-heading"><div><span class="tiny-label">MEETUPS IN ESCO</span><h3>Find your people.</h3></div><span class="mini-avi">🫶</span></div>
+              <div class="event-feature"><span class="event-date"><strong>18</strong><small>AUG</small></span><div><span class="tiny-label light">ALL AGES</span><h4>Community social</h4><p>Meet new neighbors at a verified local partner.</p><button type="button" tabindex="-1">RSVP preview</button></div></div>
+              <div class="phone-section-title"><strong>Coming up</strong><span>Calendar</span></div>
+              <div class="compact-event"><span>24</span><div><strong>Saturday coffee meetup</strong><small>10:00 AM · 18 attending</small></div></div>
+              <div class="compact-event"><span>06</span><div><strong>First Friday in Esco</strong><small>6:30 PM · Adults</small></div></div>
+            </section>
+
             <div class="phone-nav" aria-hidden="true"><span class="active">⌂<small>Home</small></span><span>⌖<small>Explore</small></span><span>◉<small>Passport</small></span><span>◇<small>Meetups</small></span><span>○<small>Me</small></span></div>
           </div>
         </div>
       </div>
     </section>
 
+    <section class="how-section" aria-labelledby="how-title">
+      <div class="how-heading reveal">
+        <p class="eyebrow">How it works</p>
+        <h2 id="how-title">Find support. Show up. Grow Pride locally.</h2>
+      </div>
+      <div class="how-grid">
+        <article class="reveal"><span>1</span><h3>Find welcoming places</h3><p>Open the app to discover verified local businesses, useful details, current offers, and nearby meetups.</p></article>
+        <article class="reveal"><span>2</span><h3>Show up in real life</h3><p>Visit partners, scan Passport check-ins, attend meetups, and complete monthly Avi Trails.</p></article>
+        <article class="reveal"><span>3</span><h3>Make support visible</h3><p>Every visit and check-in helps demonstrate that an active LGBTQ+ community already lives here.</p></article>
+      </div>
+    </section>
+
     <section class="feature-section">
       <div class="feature-heading reveal">
-        <p class="eyebrow">MORE THAN A DIRECTORY</p>
+        <p class="eyebrow">More than a directory</p>
         <h2>The app turns support into something you can see, share, and grow.</h2>
       </div>
 
@@ -148,56 +223,24 @@
           <span class="feature-tag">SIGNATURE EXPERIENCE</span>
           <h3>Avi Trails</h3>
           <p>Monthly local adventures guide the community to new businesses, specials, meetups, and neighborhood moments.</p>
-          <div class="mini-trail">
-            <span class="done">✓</span><i></i><span class="done">✓</span><i></i><span>🥑</span>
-          </div>
+          <div class="mini-trail"><span class="done">✓</span><i></i><span class="done">✓</span><i></i><span>🥑</span></div>
         </article>
-
-        <article class="feature-card reveal">
-          <div class="feature-icon">📍</div>
-          <span class="feature-tag">EXPLORE</span>
-          <h3>Verified local places</h3>
-          <p>Find Pride Partners, Welcoming Places, offers, accessibility details, and businesses open right now.</p>
-        </article>
-
-        <article class="feature-card reveal">
-          <div class="feature-icon">🥑</div>
-          <span class="feature-tag">PRIDE PASSPORT</span>
-          <h3>Check in and collect</h3>
-          <p>Scan at participating businesses, collect Avi stamps, complete challenges, and unlock limited badges.</p>
-        </article>
-
-        <article class="feature-card reveal">
-          <div class="feature-icon">🫶</div>
-          <span class="feature-tag">MEETUPS</span>
-          <h3>Find your people</h3>
-          <p>See all-ages and adult gatherings, RSVP, join waitlists, save events, and get timely reminders.</p>
-        </article>
-
-        <article class="feature-card reveal">
-          <div class="feature-icon">✨</div>
-          <span class="feature-tag">IMPACT</span>
-          <h3>Watch support add up</h3>
-          <p>See community check-ins, businesses supported, completed trails, and collective local participation.</p>
-        </article>
+        <article class="feature-card reveal"><div class="feature-icon">📍</div><span class="feature-tag">EXPLORE</span><h3>Verified local places</h3><p>Find Pride Partners, Welcoming Places, offers, accessibility details, and businesses open right now.</p></article>
+        <article class="feature-card reveal"><div class="feature-icon">🥑</div><span class="feature-tag">PRIDE PASSPORT</span><h3>Check in and collect</h3><p>Scan at participating businesses, collect Avi stamps, complete challenges, and unlock limited badges.</p></article>
+        <article class="feature-card reveal"><div class="feature-icon">🫶</div><span class="feature-tag">MEETUPS</span><h3>Find your people</h3><p>See all-ages and adult gatherings, RSVP, join waitlists, save events, and get timely reminders.</p></article>
+        <article class="feature-card reveal"><div class="feature-icon">✨</div><span class="feature-tag">IMPACT</span><h3>Watch support add up</h3><p>See community check-ins, businesses supported, completed trails, and collective local participation.</p></article>
       </div>
     </section>
 
     <section class="why-section" id="why">
       <div class="why-copy reveal">
-        <p class="eyebrow">WHY ESCO PRIDE</p>
+        <p class="eyebrow">Why Esco Pride</p>
         <h2>We should not have to leave our city to feel seen.</h2>
-        <p>
-          Esco Pride begins with something practical: helping LGBTQ+ people and allies identify the local businesses
-          willing to visibly welcome us—and giving those businesses a community ready to support them back.
-        </p>
-        <p>
-          We are starting with trusted partners, rotating meetups, and a useful app. Bigger celebrations can grow from
-          a community that already knows how to find each other.
-        </p>
+        <p>Esco Pride begins with something practical: helping LGBTQ+ people and allies identify the local businesses willing to visibly welcome us—and giving those businesses a community ready to support them back.</p>
+        <p>We are starting with trusted partners, rotating meetups, and a useful app. Bigger celebrations can grow from a community that already knows how to find each other.</p>
       </div>
       <div class="impact-panel reveal">
-        <p class="eyebrow">THE FLYWHEEL</p>
+        <p class="eyebrow">The flywheel</p>
         <div class="impact-step"><span>1</span><div><strong>Businesses show up</strong><small>Visible support, meaningful offers, welcoming spaces.</small></div></div>
         <div class="impact-line" aria-hidden="true"></div>
         <div class="impact-step"><span>2</span><div><strong>The community shows up</strong><small>Visits, check-ins, meetups, purchases, and connection.</small></div></div>
@@ -206,15 +249,24 @@
       </div>
     </section>
 
+    <section class="privacy-section" aria-labelledby="privacy-title">
+      <div class="privacy-heading reveal">
+        <p class="eyebrow">Built with intention</p>
+        <h2 id="privacy-title">Community connection without turning people into a product.</h2>
+      </div>
+      <div class="privacy-grid">
+        <article class="reveal"><span>◎</span><div><h3>Location stays optional</h3><p>Use nearby discovery when it helps. The core experience will not depend on constant background tracking.</p></div></article>
+        <article class="reveal"><span>⌁</span><div><h3>Check-ins are intentional</h3><p>Passport activity happens when a member chooses to scan at a participating business.</p></div></article>
+        <article class="reveal"><span>✓</span><div><h3>Partners are reviewed</h3><p>Listings are approved, standards matter, and concerns can be reviewed instead of leaving trust to an open directory.</p></div></article>
+      </div>
+    </section>
+
     <section class="business-section" id="business">
       <div class="business-copy reveal">
-        <p class="eyebrow">FOR LOCAL BUSINESSES</p>
+        <p class="eyebrow">For local businesses</p>
         <h2>Show our community<br>they belong here.</h2>
-        <p>
-          The business portal is the one full website experience. Learn about partner types, standards,
-          app listings, Pride Month participation, passport check-ins, and meetup opportunities—then apply online.
-        </p>
-        <a class="primary-button light-button" href="business-signup.html">Open the business portal</a>
+        <p>The business portal is the one full website experience. Learn about partner types, standards, app listings, Pride Month participation, passport check-ins, and meetup opportunities—then apply online.</p>
+        <div class="business-actions"><a class="primary-button light-button" href="business-signup.html">Open the business portal</a><span>No fee to apply</span></div>
       </div>
       <div class="partner-preview reveal">
         <div class="verified-badge"><span>🥑</span><strong>VERIFIED</strong><small>ESCO PRIDE PARTNER</small></div>
@@ -227,74 +279,51 @@
       </div>
     </section>
 
-    <section class="boundary-section reveal">
-      <div>
-        <p class="eyebrow">A DELIBERATE CHOICE</p>
-        <h2>No public directory on the website.</h2>
+    <section class="roadmap-section" id="roadmap">
+      <div class="roadmap-heading reveal">
+        <p class="eyebrow">The launch plan</p>
+        <h2>Build it with the community—not after it.</h2>
+        <p>The exact beta dates may shift as the platform is tested, but the direction is locked.</p>
       </div>
-      <p>
-        Live business discovery, maps, specials, meetups, passport activity, community participation, and saved places
-        belong inside the app. The website stays fast, clear, and focused on introducing Esco Pride and recruiting partners.
-      </p>
+      <div class="roadmap-grid">
+        <article class="reveal current"><span class="roadmap-dot"></span><small>NOW</small><h3>Recruit partners</h3><p>Approve initial businesses, shape offers, prepare badges, and build the local network before the app opens.</p></article>
+        <article class="reveal"><span class="roadmap-dot"></span><small>SPRING 2027</small><h3>Private community beta</h3><p>Test discovery, QR check-ins, meetups, notifications, and Avi Trails with a smaller local group.</p></article>
+        <article class="reveal"><span class="roadmap-dot"></span><small>PRIDE MONTH 2027</small><h3>Public app launch</h3><p>Release Esco Pride on iPhone and Android with a useful network already waiting inside.</p></article>
+      </div>
+    </section>
+
+    <section class="boundary-section reveal">
+      <div><p class="eyebrow">A deliberate choice</p><h2>No public directory on the website.</h2></div>
+      <p>Live business discovery, maps, specials, meetups, passport activity, community participation, and saved places belong inside the app. The website stays fast, clear, and focused on introducing Esco Pride and recruiting partners.</p>
     </section>
 
     <section class="faq-section" id="faq">
-      <div class="faq-heading reveal">
-        <p class="eyebrow">QUESTIONS, ANSWERED</p>
-        <h2>What to know before launch.</h2>
-      </div>
+      <div class="faq-heading reveal"><p class="eyebrow">Questions, answered</p><h2>What to know before launch.</h2></div>
       <div class="faq-list reveal">
-        <details>
-          <summary>When will the Esco Pride app launch?<span>+</span></summary>
-          <p>The first public launch is planned around Pride Month 2027, with business recruitment and community previews beginning beforehand.</p>
-        </details>
-        <details>
-          <summary>Will the app be free?<span>+</span></summary>
-          <p>The core app experience—business discovery, Avi Trails, the Pride Passport, and meetup information—is planned as a free community resource.</p>
-        </details>
-        <details>
-          <summary>Who can become an Esco Pride Partner?<span>+</span></summary>
-          <p>Escondido-area storefronts, service providers, welcoming community spaces, online businesses, creators, and organizations may apply. Participation is reviewed rather than automatic.</p>
-        </details>
-        <details>
-          <summary>Is Esco Pride a parade or festival?<span>+</span></summary>
-          <p>Not at launch. Esco Pride is beginning as a year-round local network and app. Larger public celebrations may grow later from a strong, connected community.</p>
-        </details>
+        <details><summary>When will the Esco Pride app launch?<span>+</span></summary><p>The first public launch is planned for Pride Month 2027, with business recruitment and a smaller community beta beginning beforehand.</p></details>
+        <details><summary>Will the app be free?<span>+</span></summary><p>The core app experience—business discovery, Avi Trails, the Pride Passport, and meetup information—is planned as a free community resource.</p></details>
+        <details><summary>Who can become an Esco Pride Partner?<span>+</span></summary><p>Escondido-area storefronts, service providers, welcoming community spaces, online businesses, creators, and organizations may apply. Participation is reviewed rather than automatic.</p></details>
+        <details><summary>How will businesses be verified?<span>+</span></summary><p>Applications will be reviewed for fit, accuracy, visible community commitment, and agreement with Esco Pride standards. Approved profiles can be paused or removed when information or participation no longer meets those standards.</p></details>
+        <details><summary>Do I have to live in Escondido to use it?<span>+</span></summary><p>No. The app is centered on Escondido, but nearby residents, visitors, friends, family members, and allies can use it to support the same local network.</p></details>
+        <details><summary>Is Esco Pride a parade or festival?<span>+</span></summary><p>Not at launch. Esco Pride is beginning as a year-round local network and app. Larger public celebrations may grow later from a strong, connected community.</p></details>
       </div>
     </section>
 
     <section class="final-cta reveal">
-      <div class="final-avi" aria-hidden="true"><img src="assets/avi.webp" alt=""></div>
-      <div>
-        <p class="eyebrow">PRIDE MONTH 2027</p>
-        <h2>Build the community first.<br>The rest follows.</h2>
-        <div class="actions">
-          <a class="primary-button" href="#app">See what is coming</a>
-          <a class="secondary-button" href="business-signup.html">Become a partner</a>
-        </div>
-      </div>
+      <div class="final-avi" aria-hidden="true"><img src="assets/avi.webp" loading="lazy" alt=""></div>
+      <div><p class="eyebrow">Pride Month 2027</p><h2>Build the community first.<br>The rest follows.</h2><div class="actions"><a class="primary-button" href="#app">Preview the experience</a><a class="secondary-button" href="business-signup.html">Become a partner</a></div></div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="footer-main">
-      <div>
-        <div class="footer-brand">ESCO PRIDE <span aria-hidden="true">🥑</span></div>
-        <p>A community platform developed and operated by OutAt Inc., a California C corporation.</p>
-      </div>
-      <div class="footer-links">
-        <a href="#app">The app</a>
-        <a href="business-signup.html">Business portal</a>
-        <a href="#faq">FAQ</a>
-        <a href="mailto:will@outatinc.com">Contact</a>
-      </div>
+      <div><div class="footer-brand">ESCO PRIDE <span aria-hidden="true">🥑</span></div><p>A community platform developed and operated by OutAt Inc., a California C corporation.</p></div>
+      <div class="footer-links"><a href="#app">The app</a><a href="business-signup.html">Business portal</a><a href="#roadmap">Launch plan</a><a href="#faq">FAQ</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:will@outatinc.com">Contact</a></div>
     </div>
-    <div class="footer-bottom">
-      <span>Support local. Connect with community. Celebrate Pride.</span>
-      <span>© <span data-year></span> Esco Pride. All rights reserved.</span>
-    </div>
+    <div class="footer-bottom"><span>Support local. Connect with community. Celebrate Pride.</span><span>© <span data-year></span> Esco Pride. All rights reserved.</span></div>
   </footer>
 
+  <div class="mobile-launch-bar" aria-label="Quick action"><div><strong>Esco Pride</strong><small>App coming Pride Month 2027</small></div><a href="business-signup.html">Partner with us</a></div>
   <script src="site.js"></script>
 </body>
 </html>

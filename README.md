@@ -1,53 +1,38 @@
-# Esco Pride Website — App-First Rework
+# Esco Pride Website — Final App-First Landing Site
 
-Static website built for GitHub Pages.
+Static website prepared for GitHub Pages.
 
-## Strategy
+## Website role
 
-The website now has two jobs:
+The public website intentionally has two jobs:
 
-1. Introduce Esco Pride and drive community members toward the future iPhone and Android app.
-2. Recruit and onboard Pride Partners, Welcoming Places, and Online Partners through the business portal.
+1. Introduce Esco Pride and preview the future iPhone/Android experience.
+2. Recruit and onboard Pride Partners, Welcoming Places, and Online Partners.
 
-Live business discovery, maps, Pride Passport activity, Avi Trails, meetup RSVPs, community features, and saved places are intentionally reserved for the mobile app.
+Live maps, business discovery, offers, meetup RSVPs, Pride Passport activity, Avi Trails, community participation, and saved places remain app-only.
 
-## Files
+## Major upgrades in this build
 
-- `index.html` — Full app-first Esco Pride landing page
-- `styles.css` — Main responsive design system and landing-page styles
-- `site.js` — Navigation, scroll effects, current year, and reveal animations
-- `business-signup.html` — Business partner portal and application
-- `business-signup.css` — Portal and application styling
-- `business-signup.js` — Draft saving, validation, progress, text download, and email preparation
-- `assets/avi.webp` — Optimized official Avi artwork used by the website
-- `assets/avi.png` — Original full-quality Avi artwork retained for future use
+- Refined headline tracking and reduced overly tight typography.
+- Interactive four-screen app concept preview.
+- New How It Works, privacy-by-design, and launch-roadmap sections.
+- Improved desktop and mobile navigation, active section state, keyboard controls, focus states, and reduced-motion behavior.
+- Mobile quick-action bar for partner recruitment.
+- Expanded business application with autosave status, copy, download, clear-draft controls, reference numbers, and additional onboarding fields.
+- Privacy notice, website terms, custom 404 page, favicon/app icons, social-sharing image, sitemap, robots file, structured metadata, and web manifest.
+- Optimized Avi WebP plus original PNG retained.
 
-## Publish to GitHub Pages
+## Publish
 
-1. Upload the contents of this folder to the root of the GitHub repository.
-2. Open **Settings → Pages**.
-3. Choose **Deploy from a branch**.
-4. Select `main` and `/ (root)`.
-5. Save and allow GitHub Pages to deploy.
+Upload the contents of this folder—not the enclosing folder—to the root of the GitHub repository. GitHub Pages should deploy from `main` and `/ (root)`.
 
 ## Current application flow
 
-The static GitHub Pages site cannot securely write applications to a database by itself. Until the shared Esco Pride backend is built, the application:
+The site is static. Partner application drafts save only in the applicant's browser. “Prepare application email” opens a completed message addressed to `will@outatinc.com`; nothing is silently transmitted. Once the shared Esco Pride backend exists, replace the mailto submission in `business-signup.js` with the application API.
 
-- Automatically saves a draft in the applicant's browser.
-- Validates required information.
-- Lets the applicant download a plain-text copy.
-- Opens a prepared email addressed to `will@outatinc.com`.
+## Domain assumptions
 
-When the app backend is built, replace the mailto step in `business-signup.js` with the shared application API. The website form and app/business dashboard can then use the same database.
-
-## App-store links
-
-The App Store and Google Play treatments are intentionally shown as coming soon. Replace them with live store links once each app is approved.
-
-## Ownership
-
-Esco Pride is a community platform developed and operated by OutAt Inc., a California C corporation.
+Canonical links, sitemap entries, and social metadata use `https://escopride.com/`. They can remain in place when the custom domain is connected.
 
 ## Locked Avi design rules
 
