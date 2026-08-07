@@ -49,3 +49,9 @@ Canonical links, sitemap entries, and social metadata use `https://escopride.com
 - Updated business recruitment to year-round Founding Partner language.
 - Expanded Privacy and Terms to cover the Founding Beta app and TestFlight-era data flows.
 - Updated launch roadmap, FAQ, mobile CTA, social metadata, and launch messaging.
+
+
+## Social sharing update
+- New 1200x630 social card: `assets/esco-pride-social-2026.jpg`
+- Open Graph/Twitter metadata uses a new image URL to break stale social caches.
+- Homepage share title: `Esco Pride — Pride Lives Here`.
