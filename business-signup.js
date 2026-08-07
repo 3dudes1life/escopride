@@ -208,7 +208,7 @@ form.addEventListener('input', event => {
 });
 form.addEventListener('change', () => { updateProgress(); scheduleSave(); });
 
-form.addEventListener('submit', event => {
+form.addEventListener('submit', async event => {
   event.preventDefault();
   if (!validateForm()) return;
   const data = formDataObject();
@@ -219,10 +219,31 @@ form.addEventListener('submit', event => {
     ? `${selectedTypes[0]} Application`
     : 'Partner Application';
   const subject = `Esco Pride - ${applicationLabel} - ${data.businessName} - ${reference}`;
-  const mailto = `mailto:${applicationEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(application)}`;
+  const fullMailto = `mailto:${applicationEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(application)}`;
   saveDraft(false);
+
+  // Long mailto URLs can be truncated by some browsers/mail clients. Preserve the
+  // complete application on the clipboard and open a shorter message when needed.
+  if (fullMailto.length > 1800) {
+    try {
+      await copyText(application);
+      const shortBody = [
+        `Esco Pride application ${reference} for ${data.businessName}.`,
+        '',
+        'The complete application has been copied to my clipboard. I will paste it below before sending.',
+        '',
+        '--- PASTE COMPLETE APPLICATION HERE ---'
+      ].join('\n');
+      setStatus(`Application ${reference} is ready. We copied the full application to your clipboard so nothing gets cut off. Paste it into the email, review it, then press Send.`, 'success');
+      window.location.href = `mailto:${applicationEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(shortBody)}`;
+    } catch {
+      setStatus(`Application ${reference} is ready, but your browser could not copy it automatically. Use “Copy application” or “Download copy,” then email it to ${applicationEmail}.`, 'error');
+    }
+    return;
+  }
+
   setStatus(`Application ${reference} is ready. Your email app should open; review the message, then press Send.`, 'success');
-  window.location.href = mailto;
+  window.location.href = fullMailto;
 });
 
 restoreDraft();

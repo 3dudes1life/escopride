@@ -1,0 +1,17 @@
+ESCO PRIDE — NAMECHEAP LAUNCH PACKAGE
+
+UPLOAD LOCATION
+Upload/extract the CONTENTS of this ZIP directly into your domain's public_html (or the document root for escopride.com).
+This package is intentionally root-ready: index.html sits at the top level.
+
+BEFORE ANNOUNCING
+1. Confirm https://escopride.com loads without a certificate warning.
+2. Confirm https://www.escopride.com redirects to https://escopride.com.
+3. Open Business Portal and submit a test application through your own mail app.
+4. Verify the test email goes to admin@outatinc.com and has an "Esco Pride - ... Application" subject.
+5. Test Privacy and Terms links.
+6. Share https://escopride.com in a private Facebook message first and confirm the social preview artwork/title appear.
+7. Test on iPhone once over cellular, not only Wi-Fi.
+
+NOTE
+The website is intentionally static. Business applications and Founding Beta requests open the visitor's email app; nothing is silently submitted by the site.
