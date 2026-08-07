@@ -41,3 +41,11 @@ Canonical links, sitemap entries, and social metadata use `https://escopride.com
 - Blush cheeks
 - No cape
 - Heart-hands pose for the official illustrated mascot
+
+
+## Launch-ready August 2026 update
+- Repositioned the site around the 2026 Founding Beta and a pre-Pride-2027 public soft launch.
+- Added Founding Beta recruitment CTAs and a dedicated beta section.
+- Updated business recruitment to year-round Founding Partner language.
+- Expanded Privacy and Terms to cover the Founding Beta app and TestFlight-era data flows.
+- Updated launch roadmap, FAQ, mobile CTA, social metadata, and launch messaging.
