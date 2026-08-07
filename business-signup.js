@@ -6,7 +6,7 @@ const clearButton = document.getElementById('clearDraft');
 const status = document.getElementById('formStatus');
 const progress = document.querySelector('.form-progress span');
 const storageKey = 'escoPridePartnerDraftV3';
-const applicationEmail = 'will@outatinc.com';
+const applicationEmail = 'admin@outatinc.com';
 let saveTimer;
 
 const formDataObject = () => {
@@ -214,7 +214,11 @@ form.addEventListener('submit', event => {
   const data = formDataObject();
   const reference = makeReference();
   const application = formatApplication(data, reference);
-  const subject = `Esco Pride Partner Application — ${data.businessName} — ${reference}`;
+  const selectedTypes = Array.isArray(data.partnerType) ? data.partnerType : [data.partnerType].filter(Boolean);
+  const applicationLabel = selectedTypes.length === 1
+    ? `${selectedTypes[0]} Application`
+    : 'Partner Application';
+  const subject = `Esco Pride - ${applicationLabel} - ${data.businessName} - ${reference}`;
   const mailto = `mailto:${applicationEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(application)}`;
   saveDraft(false);
   setStatus(`Application ${reference} is ready. Your email app should open; review the message, then press Send.`, 'success');

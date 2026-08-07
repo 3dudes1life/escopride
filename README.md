@@ -28,7 +28,7 @@ Upload the contents of this folder—not the enclosing folder—to the root of t
 
 ## Current application flow
 
-The site is static. Partner application drafts save only in the applicant's browser. “Prepare application email” opens a completed message addressed to `will@outatinc.com`; nothing is silently transmitted. Once the shared Esco Pride backend exists, replace the mailto submission in `business-signup.js` with the application API.
+The site is static. Partner application drafts save only in the applicant's browser. “Prepare application email” opens a completed message addressed to `admin@outatinc.com` with an Esco Pride application subject; nothing is silently transmitted. Once the shared Esco Pride backend exists, replace the mailto submission in `business-signup.js` with the application API.
 
 ## Domain assumptions
 
